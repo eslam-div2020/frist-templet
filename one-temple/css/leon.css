@@ -1,0 +1,342 @@
+/* start var*/
+
+:root{
+    --main-color:#10cab7;
+    --main-duration:0.3s;
+}
+/* end var */
+
+
+
+
+
+/* start global rules */
+*{
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Work Sans', sans-serif;
+    margin: 0;
+}
+/* end global rules*/
+.container {
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/*media quar */
+
+
+/* Small */
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+}
+/* Medium */
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+/* Large */
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
+}
+/* special heading */
+.special-heading{
+  margin: 0;
+  padding-top: 60px;
+  text-align: center;
+  font-weight: 700;
+  font-size: 65px;
+  color: #6c7f83;
+}
+.special-heading + p{
+  margin: 0px 0 0;
+padding-bottom: 100px;
+text-align: center;
+}
+
+/* start header  */
+.header {
+    padding: 20px;
+  background-color: #112031;
+
+  }
+  .header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .header .container .logo {
+    width: 60px;
+  }
+  .header .links {
+    position: relative;
+    height: 21px;
+    width: 32px;
+  }
+  .header .links:hover .icon span:nth-child(2) {
+    width: 100%;
+  }
+  .header .links .icon {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row-reverse;
+  }
+  .header .links .icon span {
+    background-color: #bbbbbb;
+    margin-bottom: 5px;
+    height: 2px;
+  }
+  .header .links .icon span:first-child {
+    width: 100%;
+  }
+  .header .links .icon span:nth-child(2) {
+    width: 45%;
+    transition: var(--main-duration);
+  }
+  .header .links .icon span:last-child {
+    width: 100%;
+  }
+  .header .links ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    background-color: #bbbbbb;
+    position: absolute;
+    right: 0;
+    min-width: 200px;
+    top: calc(100% + 15px);
+    display: none;
+    z-index: 1;
+    transition:var(--main-duration);
+  }
+  .header .links ul::before {
+    content: "";
+    border-width: 10px;
+    border-style: solid;
+    border-color: transparent transparent #111616 transparent;
+    position: absolute;
+    right: 5px;
+    top: -20px;
+  }
+  .header .links:hover ul {
+    display: block;
+    
+  }
+  .header .links ul li a {
+    display: block;
+    padding: 15px;
+    text-decoration: none;
+    color: #333;
+    transition: var(--main-duration);
+  }
+  .header .links ul li a:hover {
+    padding-left: 25px;
+  }
+  .header .links ul li:not(:last-child) a {
+    border-bottom: 1px solid #ddd;
+  }
+
+/* end header  */
+
+/* start landing section  */
+.landing{
+    background-image: url(../img/landing.jpg);
+    background-size: cover;
+    height: calc(100vh - 64px);
+    background-attachment: fixed;
+    background-position: top;
+      position: relative;
+  
+}
+.landing .text-intro{
+    position: absolute;
+  left: 50%;
+  top: 50%;
+  text-align: center;
+  transform: translate(-50%, -50%);
+ 
+  max-width: 100%;
+
+}
+.landing .text-intro h1{
+    font-size: 50px;
+    font-weight: bold;
+    margin: 0;
+    color: var(--main-color);
+}
+.landing .text-intro p
+{
+    font-size: 19px;
+    line-height: 1.8;
+}
+/* end landing section */
+
+/* start with features cardes */
+ .features{
+  padding-bottom: 60px;
+padding-top: 60px;
+background-color:#345B63;
+
+ }
+ .features .container{
+  display: flex;
+flex-wrap: wrap;
+flex-direction: row;
+justify-content: center;
+
+ }
+ .features .container .card{
+padding: 20px;
+text-align: center;
+width: calc(1100px / 3);
+
+ }
+ .features .container .card h3{
+font-weight: 600px;
+color: #fffdfd;
+ }
+ .features .container .card p{
+line-height:45px;
+color: #a5a3a3;
+ }
+ 
+
+ .features .card i{
+   color:var(--main-color);
+   font-size:60px;
+ }
+/* end features cardes */
+
+/* start services */
+.container .services{
+
+}
+.services{
+  padding-top: 60px;
+  padding-bottom: 60px;
+
+}
+
+ .services .services-content{
+   display: grid;
+   grid-template-columns: repeat(auto-fill, minmax(300px,1fr));
+   gap: 30px;
+ }
+
+ .services .services-content .col{
+   padding: 20px;
+text-align: center;
+width: calc(1100px / 3);
+display: grid;
+ }
+ .services .services-content .col .srv{
+   display: flex;
+   align-items: baseline;
+   margin-bottom: 40px;
+  
+ 
+
+ }
+ @media (max-width: 767px) {
+  .services .services-content .col .srv{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+   
+   
+  }
+}
+.services .services-content .col .srv i {
+  flex-basis: 40px;
+  color:var( --main-color);
+  display:flex;
+}
+.services .services-content .col .srv .text{
+  flex: 1;
+}
+.services .services-content .col .srv .text h3{
+  font-weight: 600px;
+}
+.services .services-content .col .srv .text p{
+  line-height: 34px;
+  color: #444444b3;
+}
+
+.services .services-content .col .srv .imges{
+  position: relative;
+  bottom: -17%;
+}
+
+.services .services-content .col .srv .imges .img {
+  width: 260px;
+  height: 350px;
+  
+}
+.services .services-content .col .srv .imges::before{
+  content: "";
+  width:100px;
+  height: 450px;
+  background-color: #345B63;
+  position: absolute;
+  z-index: -1;
+  top:-50px;
+  right:-25%;
+
+}
+/*end services*/
+
+
+/* start portfolo */
+.portfolo{
+  padding-bottom: 60px;
+  padding-top: 60px;
+  background-color: #c8c8c8;
+}
+.portfolo .portfolo-content{
+ 
+}
+.portfolo .portfolo-content .row{
+  padding: 20px;
+text-align: center;
+
+
+text-align: center;
+display: grid;
+grid-template-columns: repeat(auto-fill, minmax(300px,1fr));
+gap: 30px;
+}
+.portfolo .portfolo-content .row .pro:hover{
+  box-shadow: -5px 27px 57px -7px rgba(23,12,12,0.3);
+  transform: scale(1, 1.2);
+
+}
+.portfolo .portfolo-content .row .pro{
+background-color:#fffdfd ;
+
+transition: 0.4s;
+
+}
+
+.portfolo .portfolo-content .row .pro img{
+  max-width: 100%;
+
+}
+.portfolo .portfolo-content .row .pro .text{
+  line-height: 35px;
+  margin: 0;
+  padding-left:5px ;
+  padding-right: 5px;
+  color: #868686;
+}
+/* end portfolo */
+
